@@ -43,6 +43,11 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
+import ContactsIcon from '@mui/icons-material/Contacts';
+import EmailIcon from '@mui/icons-material/Email';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Badge from '@mui/material/Badge';
 
 const drawerWidth = 240;
 
@@ -144,6 +149,14 @@ export default function MiniDrawer() {
     setOpen(false);
   };
 
+  const messageBadges = () => {
+    return (
+        <Badge badgeContent={4} color="primary">
+            <MapsUgcIcon />
+        </Badge>
+    );
+  }
+
   return (
     <ThemeProvider theme={myTheme}>
     <Box sx={{ display: 'flex' }}>
@@ -198,7 +211,7 @@ export default function MiniDrawer() {
                     {text === 'Home' && <HomeIcon />}
                     {text === 'Projects' && <PendingActionsIcon />}
                     {text === 'Dashboard' && <DashboardIcon />}
-                    {text === 'Messages' && <MapsUgcIcon />}
+                    {text === 'Messages' && messageBadges()}
                     {text === 'Documents' && <DescriptionIcon />}
                     {text === 'Organizations' && <CorporateFareIcon />}
                     {text === 'Settings' && <SettingsIcon />}
@@ -275,7 +288,7 @@ export default function MiniDrawer() {
                         sx={{ m: 1, width: '25ch' }}
                         InputProps={{
                             startAdornment: <InputAdornment position="start">
-                                <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                <ContactsIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                             </InputAdornment>,
                         }}
                     />
@@ -288,7 +301,7 @@ export default function MiniDrawer() {
                             sx={{ m: 1, width: '25ch' }}
                             InputProps={{
                                 startAdornment: <InputAdornment position="start">
-                                    <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                    <EmailIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                                 </InputAdornment>,
                             }}
                         />
@@ -303,7 +316,7 @@ export default function MiniDrawer() {
                         sx={{ m: 1, width: '25ch' }}
                         InputProps={{
                             startAdornment: <InputAdornment position="start">
-                                <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                <LocalPhoneIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                             </InputAdornment>,
                         }}
                     />
@@ -315,7 +328,7 @@ export default function MiniDrawer() {
                         sx={{ m: 1, width: '25ch' }}
                         InputProps={{
                             startAdornment: <InputAdornment position="start">
-                                <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                <LocalPhoneIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                             </InputAdornment>,
                         }}
                     />
@@ -330,19 +343,19 @@ export default function MiniDrawer() {
                         sx={{ m: 1, width: '25ch' }}
                         InputProps={{
                             startAdornment: <InputAdornment position="start">
-                                <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                <LocationOnIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                             </InputAdornment>,
                         }}
                     />
                 </Grid>
             </Grid>
-            <Grid>
+            <Grid sx={{margin: '3%'}}>
                 <ColorButton variant="contained"> Save Changes </ColorButton>
             </Grid>
         </Paper>
         </Grid>
-        <Grid container item justifyContent={'flex-end'} sx={{xs:6, sm:3, marginTop: '-25%'}}>
-            <Paper elevation={2} sx={{ width: '20%', height:250}} variant={'outlined'} >
+        <Grid container item justifyContent={'flex-end'} sx={{xs:6, sm:3, marginTop: '-28%'}}>
+            <Paper elevation={2} sx={{ width: '20%', height:320, padding: '1%'}} variant={'outlined'} >
                 <Grid container>
                         <Grid item>
                             <Card sx={{ maxWidth: 345 }}>
